@@ -1,3 +1,5 @@
+from myhdl import *
+import math
 def bit_reverse(list,clk):
     """
     reverses the order of bits in the list
@@ -17,13 +19,15 @@ def bit_reverse(list,clk):
             b = b>>1
             a = a<<1
         if i < k: # important not to swap back 
+            temp = list[i]
             list[i] = list[k]  
-            list[k] = list[i]
+            list[k] = temp
                 
 
     for m in downrange(N):
 
         br_indices[m] = list[m]
+#        print bin(m),bin(br_indices[m])
             
     #br_indices[N-1] = 0
     
